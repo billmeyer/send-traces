@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 
+import datetime
 from opentelemetry import trace
 from opentelemetry.exporter.zipkin.json import ZipkinExporter
 from opentelemetry.exporter.jaeger.thrift import JaegerExporter
@@ -63,6 +64,10 @@ def sendTrace():
                 span.set_attribute("cvv", "123")
                 span.set_attribute("credit.card.expiration.date", "07/13/2026")
                 print("Hello world from OpenTelemetry Python!")
+
+                print(f'Trace timestamp: {datetime.datetime.now()}')
+                trace_id = str(hex(span.context.trace_id))[-32:]  # changes the id from binary to hex
+                print(f'Generated trace id: {trace_id}')
 
     print("Done.")
 
