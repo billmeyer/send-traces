@@ -59,9 +59,6 @@ def sendTrace():
                 span.set_attribute("data.http_response_code", "201")
                 span.set_attribute("host.name", "ncc1701d.starfleet.net")
                 span.set_attribute("user.name", "Jennifer Lewis")
-                span.set_attribute("user.password", "cq239n8-9c")
-                span.set_attribute("credit.card.number", "1234-5678-9012-3456")
-                span.set_attribute("cvv", "123")
                 span.set_attribute("credit.card.expiration.date", "07/13/2026")
                 print("Hello world from OpenTelemetry Python!")
 
